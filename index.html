@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InovaGro – Tecnologia e Sustentabilidade para o Futuro da Agricultura</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light-mode">
+
+  <!-- ===== CABEÇALHO ===== -->
+  <header id="topo">
+    <div class="header-inner">
+      <!-- Logo + slogan -->
+      <div class="brand">
+        <span class="logo-icon" aria-hidden="true">🌱</span>
+        <div>
+          <h1 class="logo-name">InovaGro</h1>
+          <p class="slogan">Tecnologia e Sustentabilidade para o Futuro da Agricultura</p>
+        </div>
+      </div>
+
+      <!-- Navegação principal -->
+      <nav aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link">Início</a></li>
+          <li><a href="#sustentabilidade" class="nav-link">Sustentabilidade</a></li>
+          <li><a href="#agricultura" class="nav-link">Agricultura</a></li>
+          <li><a href="#quiz" class="nav-link">Quiz</a></li>
+        </ul>
+      </nav>
+
+      <!-- Controles: tema + menu mobile -->
+      <div class="header-controls">
+        <button id="theme-toggle" class="btn-theme" aria-label="Alternar modo claro/escuro">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button class="btn-menu" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu mobile (colapsável) -->
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Menu mobile">
+      <ul>
+        <li><a href="#inicio" class="nav-link">Início</a></li>
+        <li><a href="#sustentabilidade" class="nav-link">Sustentabilidade</a></li>
+        <li><a href="#agricultura" class="nav-link">Agricultura</a></li>
+        <li><a href="#quiz" class="nav-link">Quiz</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main>
+
+    <!-- ── SEÇÃO INÍCIO ── -->
+    <section id="inicio" class="section section-hero">
+      <div class="container hero-grid">
+
+        <!-- Texto de apresentação -->
+        <div class="hero-text">
+          <span class="eyebrow">Bem-vindo ao InovaGro</span>
+          <h2 class="section-title">O campo que inova <br>alimenta o futuro</h2>
+          <p>
+            O InovaGro é um espaço educacional dedicado a mostrar como a tecnologia e a
+            inovação podem transformar a agricultura em uma atividade mais sustentável,
+            eficiente e harmoniosa com o meio ambiente.
+          </p>
+          <p>
+            A agricultura sustentável garante alimentos saudáveis para as gerações atuais
+            sem comprometer os recursos naturais que as gerações futuras precisarão.
+            Cada escolha no campo — do solo à água, da semente à colheita — pode fazer
+            uma diferença real no planeta.
+          </p>
+          <a href="#sustentabilidade" class="btn btn-primary">Explorar conteúdo</a>
+        </div>
+
+        <!-- Ilustração SVG -->
+        <div class="hero-illustration" aria-hidden="true">
+          <svg viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração de campo agrícola">
+            <!-- Céu -->
+            <rect x="0" y="0" width="420" height="220" rx="18" fill="var(--sky)"/>
+            <!-- Sol -->
+            <circle cx="340" cy="60" r="38" fill="var(--sun)" opacity="0.9"/>
+            <circle cx="340" cy="60" r="28" fill="var(--sun-core)"/>
+            <!-- Nuvens -->
+            <ellipse cx="80" cy="55" rx="38" ry="18" fill="white" opacity="0.85"/>
+            <ellipse cx="108" cy="48" rx="28" ry="16" fill="white" opacity="0.85"/>
+            <!-- Solo -->
+            <rect x="0" y="218" width="420" height="142" rx="0" fill="var(--soil)"/>
+            <!-- Fileiras de plantio -->
+            <rect x="0" y="218" width="420" height="12" fill="var(--soil-top)"/>
+            <!-- Plantas estilizadas -->
+            <!-- Planta 1 -->
+            <line x1="60"  y1="218" x2="60"  y2="160" stroke="var(--stem)" stroke-width="4" stroke-linecap="round"/>
+            <ellipse cx="60"  cy="150" rx="22" ry="30" fill="var(--leaf-dark)" transform="rotate(-15,60,150)"/>
+            <ellipse cx="60"  cy="150" rx="18" ry="26" fill="var(--leaf)" transform="rotate(10,60,150)"/>
+            <!-- Planta 2 -->
+            <line x1="130" y1="218" x2="130" y2="148" stroke="var(--stem)" stroke-width="4" stroke-linecap="round"/>
+            <ellipse cx="130" cy="136" rx="26" ry="34" fill="var(--leaf-dark)" transform="rotate(12,130,136)"/>
+            <ellipse cx="130" cy="136" rx="20" ry="28" fill="var(--leaf)" transform="rotate(-8,130,136)"/>
+            <!-- Planta 3 -->
+            <line x1="200" y1="218" x2="200" y2="140" stroke="var(--stem)" stroke-width="4" stroke-linecap="round"/>
+            <ellipse cx="200" cy="128" rx="28" ry="36" fill="var(--leaf-dark)" transform="rotate(-10,200,128)"/>
+            <ellipse cx="200" cy="128" rx="22" ry="30" fill="var(--leaf)" transform="rotate(15,200,128)"/>
+            <!-- Planta 4 -->
+            <line x1="270" y1="218" x2="270" y2="152" stroke="var(--stem)" stroke-width="4" stroke-linecap="round"/>
+            <ellipse cx="270" cy="140" rx="24" ry="32" fill="var(--leaf-dark)" transform="rotate(8,270,140)"/>
+            <ellipse cx="270" cy="140" rx="19" ry="26" fill="var(--leaf)" transform="rotate(-12,270,140)"/>
+            <!-- Planta 5 -->
+            <line x1="340" y1="218" x2="340" y2="158" stroke="var(--stem)" stroke-width="4" stroke-linecap="round"/>
+            <ellipse cx="340" cy="146" rx="22" ry="30" fill="var(--leaf-dark)" transform="rotate(-6,340,146)"/>
+            <ellipse cx="340" cy="146" rx="17" ry="24" fill="var(--leaf)" transform="rotate(14,340,146)"/>
+            <!-- Gotinhas de irrigação -->
+            <circle cx="95"  cy="185" r="4" fill="#56b4e9" opacity="0.8"/>
+            <circle cx="165" cy="190" r="3" fill="#56b4e9" opacity="0.7"/>
+            <circle cx="235" cy="183" r="4" fill="#56b4e9" opacity="0.8"/>
+            <circle cx="305" cy="188" r="3" fill="#56b4e9" opacity="0.7"/>
+            <!-- Painel solar pequeno -->
+            <rect x="360" y="190" width="44" height="26" rx="4" fill="#2563eb" opacity="0.85"/>
+            <line x1="382" y1="190" x2="382" y2="216" stroke="white" stroke-width="1.5" opacity="0.5"/>
+            <line x1="360" y1="203" x2="404" y2="203" stroke="white" stroke-width="1.5" opacity="0.5"/>
+            <rect x="376" y="216" width="12" height="8" rx="2" fill="var(--soil-top)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SEÇÃO SUSTENTABILIDADE ── -->
+    <section id="sustentabilidade" class="section section-sustentabilidade">
+      <div class="container">
+        <span class="eyebrow">Por que importa</span>
+        <h2 class="section-title">Sustentabilidade</h2>
+        <p class="section-intro">
+          Produzir alimentos respeitando os limites do planeta é possível — e necessário.
+          Conheça os quatro pilares que guiam uma agricultura verdadeiramente sustentável.
+        </p>
+
+        <div class="cards-grid">
+
+          <!-- Card 1: Água -->
+          <article class="card" tabindex="0">
+            <div class="card-icon" aria-hidden="true">💧</div>
+            <h3 class="card-title">Uso Consciente da Água</h3>
+            <p>
+              A água é o recurso mais precioso do campo. Técnicas como irrigação por gotejamento,
+              captação de água da chuva e reuso de efluentes reduzem o consumo em até 50%,
+              preservando rios, lagos e lençóis freáticos para as próximas gerações.
+            </p>
+          </article>
+
+          <!-- Card 2: Energia -->
+          <article class="card" tabindex="0">
+            <div class="card-icon" aria-hidden="true">☀️</div>
+            <h3 class="card-title">Energia Renovável</h3>
+            <p>
+              Painéis solares, biodigestores e pequenas turbinas eólicas permitem que
+              propriedades rurais gerem sua própria energia limpa, reduzindo custos operacionais
+              e emissões de carbono ao mesmo tempo.
+            </p>
+          </article>
+
+          <!-- Card 3: Solo -->
+          <article class="card" tabindex="0">
+            <div class="card-icon" aria-hidden="true">🌍</div>
+            <h3 class="card-title">Preservação do Solo</h3>
+            <p>
+              O solo fértil é formado ao longo de séculos. Práticas como plantio direto,
+              rotação de culturas e uso de cobertura vegetal evitam a erosão, mantêm os
+              nutrientes e favorecem a biodiversidade subterrânea essencial para as plantas.
+            </p>
+          </article>
+
+          <!-- Card 4: Desperdício -->
+          <article class="card" tabindex="0">
+            <div class="card-icon" aria-hidden="true">♻️</div>
+            <h3 class="card-title">Redução de Desperdícios</h3>
+            <p>
+              Da colheita à mesa, cerca de um terço dos alimentos produzidos no mundo é
+              desperdiçado. Embalagens inteligentes, logística eficiente e compostagem
+              transformam resíduos em recursos, fechando o ciclo produtivo.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SEÇÃO AGRICULTURA ── -->
+    <section id="agricultura" class="section section-agricultura">
+      <div class="container">
+        <span class="eyebrow">Inovação no campo</span>
+        <h2 class="section-title">Agricultura do Futuro</h2>
+        <p class="section-intro">
+          A tecnologia chegou ao campo para ficar. Veja como ferramentas modernas
+          tornam a produção mais eficiente, rentável e respeitosa com o ambiente.
+        </p>
+
+        <div class="cards-grid cards-grid--alt">
+
+          <!-- Card 1 -->
+          <article class="card card--feature" tabindex="0">
+            <div class="card-icon" aria-hidden="true">🛰️</div>
+            <h3 class="card-title">Agricultura de Precisão</h3>
+            <p>
+              Satélites, drones e sensores de solo mapeiam cada metro da lavoura em tempo
+              real. Com esses dados, o produtor aplica insumos apenas onde são necessários,
+              reduzindo custos e impacto ambiental sem abrir mão da produtividade.
+            </p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card card--feature" tabindex="0">
+            <div class="card-icon" aria-hidden="true">💦</div>
+            <h3 class="card-title">Irrigação Inteligente</h3>
+            <p>
+              Sistemas automatizados leem a umidade do solo e as previsões meteorológicas
+              para liberar a quantidade exata de água no momento certo. O resultado é uma
+              lavoura mais saudável com até 40% menos desperdício hídrico.
+            </p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card card--feature" tabindex="0">
+            <div class="card-icon" aria-hidden="true">🤖</div>
+            <h3 class="card-title">Tecnologias de Produção</h3>
+            <p>
+              Máquinas autônomas, aplicativos de gestão e inteligência artificial ajudam o
+              agricultor a tomar decisões mais seguras sobre plantio, colheita e
+              comercialização, tornando o campo mais rentável e menos dependente do acaso.
+            </p>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card card--feature" tabindex="0">
+            <div class="card-icon" aria-hidden="true">📡</div>
+            <h3 class="card-title">Monitoramento Ambiental</h3>
+            <p>
+              Estações meteorológicas conectadas e sensores de qualidade do ar e da água
+              permitem acompanhar o impacto da produção no ecossistema, possibilitando
+              ajustes rápidos e gestão responsável dos recursos naturais.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SEÇÃO QUIZ ── -->
+    <section id="quiz" class="section section-quiz">
+      <div class="container">
+        <span class="eyebrow">Teste seus conhecimentos</span>
+        <h2 class="section-title">Quiz InovaGro</h2>
+        <p class="section-intro">
+          10 perguntas sobre sustentabilidade e agricultura. Veja quanto você sabe!
+        </p>
+
+        <!-- Caixa do quiz -->
+        <div class="quiz-box" id="quiz-box">
+
+          <!-- Cabeçalho do quiz: progresso + pontuação -->
+          <div class="quiz-header" id="quiz-header">
+            <span id="quiz-counter">Pergunta 1 de 10</span>
+            <span id="quiz-score-live">Pontuação: 0</span>
+          </div>
+
+          <!-- Barra de progresso -->
+          <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" aria-label="Progresso do quiz">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+
+          <!-- Área da pergunta -->
+          <div id="quiz-question-area">
+            <p class="quiz-question" id="quiz-question"></p>
+            <ul class="quiz-options" id="quiz-options"></ul>
+          </div>
+
+          <!-- Feedback de resposta -->
+          <p class="quiz-feedback" id="quiz-feedback" aria-live="polite"></p>
+
+          <!-- Botão próxima -->
+          <button class="btn btn-primary quiz-next" id="btn-next" style="display:none;">
+            Próxima Pergunta →
+          </button>
+
+          <!-- Resultado final (oculto até o fim) -->
+          <div class="quiz-result" id="quiz-result" style="display:none;">
+            <div class="result-icon" aria-hidden="true" id="result-icon"></div>
+            <h3 id="result-title"></h3>
+            <p id="result-score"></p>
+            <p id="result-message" class="result-message"></p>
+            <button class="btn btn-primary" id="btn-restart">Jogar Novamente</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span aria-hidden="true">🌱</span>
+        <strong>InovaGro</strong>
+        <p>Tecnologia e Sustentabilidade para o Futuro da Agricultura</p>
+      </div>
+      <nav class="footer-nav" aria-label="Links do rodapé">
+        <a href="#inicio">Início</a>
+        <a href="#sustentabilidade">Sustentabilidade</a>
+        <a href="#agricultura">Agricultura</a>
+        <a href="#quiz">Quiz</a>
+      </nav>
+      <p class="footer-copy">© 2025 InovaGro. Conteúdo educacional de acesso livre.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

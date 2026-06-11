@@ -1,0 +1,841 @@
+/* =====================================================
+   InovaGro – Folha de Estilos Principal
+   Organização:
+     1. Variáveis CSS (tokens de design)
+     2. Reset e base
+     3. Tipografia
+     4. Layout genérico
+     5. Cabeçalho e navegação
+     6. Seção Hero (Início)
+     7. Cards (Sustentabilidade / Agricultura)
+     8. Quiz
+     9. Rodapé
+    10. Utilitários e animações
+    11. Responsividade
+    12. Modo escuro
+   ===================================================== */
+
+/* ─────────────────────────────────────────
+   1. VARIÁVEIS CSS
+───────────────────────────────────────── */
+:root {
+  /* Paleta principal */
+  --green-900: #14532d;
+  --green-700: #15803d;
+  --green-500: #22c55e;
+  --green-300: #86efac;
+  --green-100: #dcfce7;
+
+  --blue-700:  #1d4ed8;
+  --blue-500:  #3b82f6;
+  --blue-300:  #93c5fd;
+  --blue-100:  #dbeafe;
+
+  /* Superfícies */
+  --bg:        #f0fdf4;          /* fundo geral */
+  --bg-alt:    #ffffff;          /* superfície de cards / quiz */
+  --bg-header: rgba(240,253,244,0.92);
+
+  /* Texto */
+  --text-main: #1a2e1a;
+  --text-soft: #4b5e4b;
+  --text-inv:  #ffffff;
+
+  /* Accent */
+  --accent:    var(--green-700);
+  --accent-2:  var(--blue-500);
+
+  /* Bordas e sombras */
+  --border:    #d1fae5;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.07);
+  --shadow-md: 0 6px 24px rgba(0,0,0,.10);
+
+  /* Raios */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  /* Tipografia */
+  --font-display: 'Georgia', serif;
+  --font-body:    system-ui, 'Segoe UI', Arial, sans-serif;
+
+  /* Espaçamentos de seção */
+  --section-py: 80px;
+
+  /* Ilustração SVG */
+  --sky:       #bae6fd;
+  --sun:       #fde68a;
+  --sun-core:  #f59e0b;
+  --leaf:      #22c55e;
+  --leaf-dark: #15803d;
+  --stem:      #15803d;
+  --soil:      #92400e;
+  --soil-top:  #78350f;
+
+  /* Transição padrão */
+  --transition: 0.25s ease;
+}
+
+/* ─────────────────────────────────────────
+   2. RESET E BASE
+───────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text-main);
+  line-height: 1.7;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ─────────────────────────────────────────
+   3. TIPOGRAFIA
+───────────────────────────────────────── */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--green-900);
+  margin-bottom: 16px;
+}
+
+.section-intro {
+  max-width: 680px;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-700);
+  background: var(--green-100);
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+
+/* ─────────────────────────────────────────
+   4. LAYOUT GENÉRICO
+───────────────────────────────────────── */
+.container {
+  width: min(1160px, 92vw);
+  margin-inline: auto;
+}
+
+.section {
+  padding: var(--section-py) 0;
+}
+
+/* ─────────────────────────────────────────
+   5. CABEÇALHO E NAVEGAÇÃO
+───────────────────────────────────────── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-header);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px min(4vw, 40px);
+  max-width: 1160px;
+  margin-inline: auto;
+}
+
+/* Marca */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.logo-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--green-900);
+  line-height: 1.1;
+}
+
+.slogan {
+  font-size: 0.68rem;
+  color: var(--text-soft);
+  line-height: 1.3;
+  max-width: 280px;
+}
+
+/* Nav desktop */
+nav .nav-list {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-link {
+  padding: 7px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  transition: background var(--transition), color var(--transition);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  background: var(--green-100);
+  color: var(--green-700);
+  outline: none;
+}
+
+/* Controles */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-theme {
+  background: var(--green-100);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn-theme:hover {
+  background: var(--green-300);
+  transform: rotate(20deg);
+}
+
+/* Botão hambúrguer */
+.btn-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+}
+
+.btn-menu span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: var(--text-main);
+  border-radius: 4px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* Nav mobile */
+.nav-mobile {
+  display: none;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  padding: 12px min(4vw, 40px);
+  animation: slideDown 0.25s ease;
+}
+
+.nav-mobile ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-mobile .nav-link {
+  display: block;
+  padding: 10px 16px;
+}
+
+.nav-mobile.open {
+  display: block;
+}
+
+/* ─────────────────────────────────────────
+   6. HERO (INÍCIO)
+───────────────────────────────────────── */
+.section-hero {
+  background: linear-gradient(160deg, var(--green-100) 0%, var(--blue-100) 100%);
+  padding-top: calc(var(--section-py) + 20px);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero-text .section-title {
+  margin-top: 10px;
+}
+
+.hero-text p {
+  color: var(--text-soft);
+  margin-bottom: 16px;
+}
+
+.hero-illustration svg {
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  animation: floatUp 3s ease-in-out infinite alternate;
+}
+
+/* Variáveis SVG herdadas do :root */
+svg {
+  --sky:      #bae6fd;
+  --sun:      #fde68a;
+  --sun-core: #f59e0b;
+  --leaf:     #22c55e;
+  --leaf-dark:#15803d;
+  --stem:     #15803d;
+  --soil:     #92400e;
+  --soil-top: #78350f;
+}
+
+/* ─────────────────────────────────────────
+   7. CARDS
+───────────────────────────────────────── */
+.section-sustentabilidade {
+  background: var(--bg-alt);
+}
+
+.section-agricultura {
+  background: var(--bg);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  cursor: default;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--green-300);
+  outline: none;
+}
+
+.section-sustentabilidade .card {
+  background: var(--bg-alt);
+}
+
+.card--feature {
+  background: var(--bg-alt);
+}
+
+.section-agricultura .card--feature {
+  background: var(--bg-alt);
+}
+
+.card-icon {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--green-900);
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.93rem;
+  color: var(--text-soft);
+  line-height: 1.65;
+}
+
+/* ─────────────────────────────────────────
+   8. BOTÕES
+───────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.btn-primary {
+  background: var(--green-700);
+  color: var(--text-inv);
+  box-shadow: 0 4px 14px rgba(21,128,61,.35);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--green-900);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(21,128,61,.45);
+  outline: none;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────
+   9. QUIZ
+───────────────────────────────────────── */
+.section-quiz {
+  background: linear-gradient(160deg, var(--blue-100) 0%, var(--green-100) 100%);
+}
+
+.quiz-box {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 44px;
+  max-width: 720px;
+  margin-inline: auto;
+  box-shadow: var(--shadow-md);
+}
+
+/* Cabeçalho do quiz */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-soft);
+  margin-bottom: 16px;
+}
+
+/* Barra de progresso */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--green-100);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--green-500), var(--blue-500));
+  border-radius: 100px;
+  transition: width 0.5s ease;
+}
+
+/* Pergunta */
+.quiz-question {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green-900);
+  margin-bottom: 24px;
+  line-height: 1.45;
+}
+
+/* Alternativas */
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  text-align: left;
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--green-500);
+  background: var(--green-100);
+  transform: translateX(4px);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+.quiz-option.correct {
+  border-color: var(--green-500);
+  background: var(--green-100);
+}
+
+.quiz-option.wrong {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+/* Feedback */
+.quiz-feedback {
+  min-height: 24px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  transition: opacity var(--transition);
+}
+
+.quiz-feedback.ok   { color: var(--green-700); }
+.quiz-feedback.fail { color: #dc2626; }
+
+/* Botão próxima */
+.quiz-next {
+  margin-top: 4px;
+}
+
+/* Resultado */
+.quiz-result {
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.result-icon {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  animation: bounceIn 0.6s ease;
+}
+
+.quiz-result h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--green-900);
+  margin-bottom: 10px;
+}
+
+.quiz-result p {
+  color: var(--text-soft);
+  margin-bottom: 10px;
+}
+
+.result-message {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--green-700) !important;
+  margin-bottom: 28px !important;
+}
+
+/* ─────────────────────────────────────────
+   10. RODAPÉ
+───────────────────────────────────────── */
+footer {
+  background: var(--green-900);
+  color: var(--green-100);
+  padding: 48px 0 32px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.footer-brand span {
+  font-size: 1.8rem;
+}
+
+.footer-brand strong {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: white;
+}
+
+.footer-brand p {
+  color: var(--green-300);
+  max-width: 260px;
+  font-size: 0.82rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: flex-start;
+}
+
+.footer-nav a {
+  color: var(--green-300);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.footer-nav a:hover {
+  color: white;
+}
+
+.footer-copy {
+  width: 100%;
+  text-align: center;
+  color: var(--green-300);
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  margin-top: 16px;
+  padding-top: 24px;
+}
+
+/* ─────────────────────────────────────────
+   11. ANIMAÇÕES
+───────────────────────────────────────── */
+@keyframes floatUp {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-14px); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  0%   { transform: scale(0.4); opacity: 0; }
+  60%  { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Respeitar preferência por menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─────────────────────────────────────────
+   12. RESPONSIVIDADE
+───────────────────────────────────────── */
+
+/* Tablet (≤ 900px) */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text .section-title br { display: none; }
+
+  .hero-illustration {
+    display: flex;
+    justify-content: center;
+    order: -1;
+  }
+
+  .hero-illustration svg {
+    max-width: 380px;
+  }
+
+  .section-intro {
+    margin-inline: auto;
+  }
+
+  nav .nav-list {
+    display: none;
+  }
+
+  .btn-menu {
+    display: flex;
+  }
+
+  .slogan {
+    display: none;
+  }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  :root {
+    --section-py: 56px;
+  }
+
+  .quiz-box {
+    padding: 28px 20px;
+  }
+
+  .quiz-header {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+  }
+}
+
+/* ─────────────────────────────────────────
+   13. MODO ESCURO
+───────────────────────────────────────── */
+body.dark-mode {
+  --bg:        #0d1f0d;
+  --bg-alt:    #132213;
+  --bg-header: rgba(13,31,13,0.92);
+
+  --text-main: #e2f0e2;
+  --text-soft: #9ab89a;
+  --text-inv:  #0d1f0d;
+
+  --border:    #1e3a1e;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.35);
+  --shadow-md: 0 6px 24px rgba(0,0,0,.45);
+
+  --green-100: #14321a;
+  --green-300: #166534;
+  --green-900: #bbf7d0;
+
+  --blue-100:  #0f1e3a;
+  --blue-300:  #1e3a6e;
+
+  --sky:       #0c2d4a;
+  --sun:       #78350f;
+  --sun-core:  #b45309;
+  --leaf:      #16a34a;
+  --leaf-dark: #15803d;
+  --stem:      #15803d;
+  --soil:      #451a03;
+  --soil-top:  #292524;
+}
+
+body.dark-mode .section-title {
+  color: var(--green-900);
+}
+
+body.dark-mode .card-title {
+  color: var(--green-900);
+}
+
+body.dark-mode .quiz-question {
+  color: var(--green-900);
+}
+
+body.dark-mode .quiz-result h3 {
+  color: var(--green-900);
+}
+
+body.dark-mode .eyebrow {
+  background: var(--green-100);
+  color: var(--green-300);
+}
+
+body.dark-mode .quiz-option.correct {
+  border-color: #22c55e;
+  background: #052e16;
+}
+
+body.dark-mode .btn-theme {
+  background: var(--green-100);
+}
+
+body.dark-mode svg {
+  --sky:      #0c2d4a;
+  --sun:      #78350f;
+  --sun-core: #b45309;
+  --leaf:     #16a34a;
+  --leaf-dark:#15803d;
+  --stem:     #15803d;
+  --soil:     #451a03;
+  --soil-top: #292524;
+}
